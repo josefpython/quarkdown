@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, url_for
 from os import environ as env
 from dotenv import load_dotenv
 
@@ -15,7 +15,7 @@ def main():
     Serve the main page listing all the articles,
     using landing.html
     """
-    return "Hello World"
+    return render_template("landing.html")
 
 @app.route("/forceupdate", methods=["POST"])
 def force_update():
@@ -39,7 +39,7 @@ def article(id):
     """
     Path to serve rendered articles
     """
-    return render_template(id+".html")
+    return render_template("article_"+id+".html")
 
 if __name__ == "__main__":
     app.run(debug=True)

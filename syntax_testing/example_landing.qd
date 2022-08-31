@@ -1,0 +1,103 @@
+This is an example of a Quarkdown document. It consists of
+a head and a body. Everything outside these tags is treated
+as code commentary (ignored).
+
+The head of the document MUST contain the SYNTAX option.
+Quark currently supports the following syntaxes:
+    * html = you fill the body with pure html, that is directly rendered as an article
+    * md = you fill the body with markdown syntax, which is then converted into an html page
+
+The .md syntax also takes into consideration the following header settings:
+    DOCUMENT_TITLE
+    TITLE
+    AUTHOR
+    DATE
+
+<$HEAD$>
+
+DOCUMENT_TITLE::Hello
+TITLE::Hello World, welcome to quark!
+AUTHOR::QuarkTeam
+DATE::31.08.2022
+SYNTAX::html
+
+<$ENDHEAD$>
+
+<$BODY$>
+
+You will like those projects!
+
+---
+
+# h1 Heading 8-)
+## h2 Heading
+### h3 Heading
+#### h4 Heading
+##### h5 Heading
+###### h6 Heading
+
+
+## Horizontal Rules
+
+___
+
+---
+
+***
+
+
+## Typographic replacements
+
+Enable typographer option to see result.
+
+(c) (C) (r) (R) (tm) (TM) (p) (P) +-
+
+test.. test... test..... test?..... test!....
+
+!!!!!! ???? ,,  -- ---
+
+"Smartypants, double quotes" and 'single quotes'
+
+
+## Emphasis
+
+**This is bold text**
+
+__This is bold text__
+
+*This is italic text*
+
+_This is italic text_
+
+~~Strikethrough~~
+
+
+## Blockquotes
+
+
+> Blockquotes can also be nested...
+>> ...by using additional greater-than signs right next to each other...
+> > > ...or with spaces between arrows.
+
+
+## Lists
+
+Unordered
+
++ Create a list by starting a line with `+`, `-`, or `*`
++ Sub-lists are made by indenting 2 spaces:
+  - Marker character change forces new list start:
+    * Ac tristique libero volutpat at
+    + Facilisis in pretium nisl aliquet
+    - Nulla volutpat aliquam velit
++ Very easy!
+
+Ordered
+
+1. Lorem ipsum dolor sit amet
+2. Consectetur adipiscing elit
+3. Integer molestie lorem at massa
+
+<$ENDBODY$>
+
+forever drain, btw
