@@ -2,6 +2,8 @@ from flask import Flask, request, render_template, url_for
 from os import environ as env
 from dotenv import load_dotenv
 
+from boilerplate.quarkbase import QuarkBase
+
 app = Flask(__name__)
 load_dotenv()
 
@@ -26,13 +28,15 @@ def force_update():
     and Quarkbase.render_landing methods, updating
     the page with new content in the linked github repository.
     """
-    
+
     key = request.args.get("key", default="", type=str)
 
     if key == LIVE_ACCESS_KEY:
+        q = QuarkBase(REPOSITORY_URL)
+        q.check_and_update()
         return "Updated articles.", 201
     else:
-        return "", 401
+        return "Invalid key!", 401
 
 @app.route("/article/<id>")
 def article(id):

@@ -1,12 +1,16 @@
 from markdown import markdown
 
-HTML_DEFAULT_TEMPLATE = """
-
-"""
-
 class QuarkBase:
-    def __init__(self) -> None:
+    def __init__(self, repository_url: str) -> None:
+        self.repository_url = repository_url
+
+    def check_and_update(self):
+        """
+        TODO Check repository for not yet rendered articles, fetch them,
+        run them into self.render_article() & render new landing using self.render_landing()
+        """
         pass
+        
 
     def render_article(self, quark_string: str, id: int) -> dict:
         """
